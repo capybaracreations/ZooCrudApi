@@ -34,6 +34,7 @@ ext {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web:$springVersion")
+    compile("org.springframework.boot:spring-boot-starter-actuator:$springVersion")
 
     testCompile("junit:junit")
     testCompile("org.springframework.boot:spring-boot-starter-test:$springVersion")
