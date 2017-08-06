@@ -1,4 +1,5 @@
-package pro.patrykkrawczyk.zoocrudapi.dto;
+package pro.patrykkrawczyk.zoocrudapi.service.dto;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,14 +7,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class SpeciesDTO {
+public class AnimalDTO implements Serializable {
 
     private Long id;
     @NotNull
     private String name;
+    private Long speciesId;
+    private String speciesName;
+    private Long enclosureId;
 }

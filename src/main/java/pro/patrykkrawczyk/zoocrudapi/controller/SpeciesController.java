@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pro.patrykkrawczyk.zoocrudapi.controller.util.HeaderUtil;
 import pro.patrykkrawczyk.zoocrudapi.controller.util.ResponseUtil;
-import pro.patrykkrawczyk.zoocrudapi.dto.SpeciesDTO;
 import pro.patrykkrawczyk.zoocrudapi.service.SpeciesService;
+import pro.patrykkrawczyk.zoocrudapi.service.dto.SpeciesDTO;
 
 import javax.validation.Valid;
 import java.net.URI;

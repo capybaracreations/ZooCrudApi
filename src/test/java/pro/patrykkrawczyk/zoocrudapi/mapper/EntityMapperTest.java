@@ -19,7 +19,7 @@ public abstract class EntityMapperTest<Entity, DTO, Mapper extends EntityMapper<
 
     protected abstract DTO getDto();
 
-    protected abstract void verifyDomain(Entity entity, DTO dto);
+    protected abstract void verifyEntity(Entity entity, DTO dto);
 
     protected abstract void verifyDto(Entity entity, DTO dto);
 
@@ -30,28 +30,28 @@ public abstract class EntityMapperTest<Entity, DTO, Mapper extends EntityMapper<
     }
 
     @Test
-    public void verifyDomainToDtoMapping() {
+    public void verifyEntityToDtoMapping() {
         DTO mappedDto = mapper.toDto(entity);
         verifyDto(entity, mappedDto);
     }
 
     @Test
-    public void verifyDtoToDomainMapping() {
+    public void verifyDtoToEntityMapping() {
         Entity mappedEntity = mapper.toEntity(dto);
         verifyDto(mappedEntity, dto);
     }
 
     @Test
-    public void verifyDomainsToDtosMapping() {
+    public void verifyEntitiesToDtosMapping() {
         List<Entity> entities = Arrays.asList(entity);
         List<DTO> mappedDtos = mapper.toDto(entities);
         mappedDtos.forEach(dto -> verifyDto(entity, dto));
     }
 
     @Test
-    public void verifyDtosToDomainsMapping() {
+    public void verifyDtosToEntityMapping() {
         List<DTO> dtos = Arrays.asList(dto);
         List<Entity> mappedEntities = mapper.toEntity(dtos);
-        mappedEntities.forEach(d -> verifyDomain(d, dto));
+        mappedEntities.forEach(d -> verifyEntity(d, dto));
     }
 }

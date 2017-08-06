@@ -100,12 +100,17 @@ public class AnimalRepositoryTest {
 
         Animal persisted = animalRepository.findAll().get(0);
 
-        Animal modified = TestObjectFactory.AnimalModified();
-        modified.setSpecies(SPECIES);
-        modified.setEnclosure(ENCLOSURE);
-        modified.setId(persisted.getId());
+        Animal modified = Animal.builder()
+                .id(persisted.getId())
+                .name(TestObjectFactory.NAME_MODIFIED_FIELD)
+                .species(SPECIES)
+                .enclosure(ENCLOSURE)
+                .build();
 
         animalRepository.saveAndFlush(modified);
+
+        persisted = animalRepository.findAll().get(0);
+
 
         Assert.assertEquals(persisted.getId(), modified.getId());
         Assert.assertEquals(modified.getName(), persisted.getName());

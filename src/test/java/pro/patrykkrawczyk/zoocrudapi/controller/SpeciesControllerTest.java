@@ -12,8 +12,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import pro.patrykkrawczyk.zoocrudapi.TestObjectFactory;
-import pro.patrykkrawczyk.zoocrudapi.dto.SpeciesDTO;
 import pro.patrykkrawczyk.zoocrudapi.service.SpeciesService;
+import pro.patrykkrawczyk.zoocrudapi.service.dto.SpeciesDTO;
 
 import java.util.Arrays;
 
@@ -45,8 +45,9 @@ public class SpeciesControllerTest {
     @Test
     public void createSpecies_shouldReturnRepresentationOfCreatedEntity() throws Exception {
         SpeciesDTO speciesDTO = TestObjectFactory.SpeciesDTO();
+        speciesDTO.setId(null);
+
         SpeciesDTO persisted = TestObjectFactory.SpeciesDTO();
-        persisted.setId(TestObjectFactory.ID_FIELD);
 
         Mockito.when(speciesService.save(speciesDTO)).thenReturn(persisted);
 
@@ -145,12 +146,13 @@ public class SpeciesControllerTest {
     @Test
     public void updateSpecies_shouldCreateNewEntityAndReturnItsRepresentationForNonExistingId() throws Exception {
         SpeciesDTO speciesDTO = TestObjectFactory.SpeciesDTO();
+        speciesDTO.setId(null);
+
         SpeciesDTO persisted = TestObjectFactory.SpeciesDTO();
-        persisted.setId(TestObjectFactory.ID_FIELD);
 
         Mockito.when(speciesService.save(speciesDTO)).thenReturn(persisted);
 
-        mockMvc.perform(put("/api/species")
+        mockMvc.perform(put("/api/species/")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content(mapToJson(speciesDTO)))
                 .andExpect(status().isCreated())

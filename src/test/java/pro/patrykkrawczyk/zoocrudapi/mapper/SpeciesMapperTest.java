@@ -5,7 +5,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import pro.patrykkrawczyk.zoocrudapi.TestObjectFactory;
 import pro.patrykkrawczyk.zoocrudapi.domain.Species;
-import pro.patrykkrawczyk.zoocrudapi.dto.SpeciesDTO;
+import pro.patrykkrawczyk.zoocrudapi.service.dto.SpeciesDTO;
 import pro.patrykkrawczyk.zoocrudapi.service.mapper.SpeciesMapper;
 import pro.patrykkrawczyk.zoocrudapi.service.mapper.SpeciesMapperImpl;
 
@@ -17,26 +17,19 @@ public class SpeciesMapperTest extends EntityMapperTest<Species, SpeciesDTO, Spe
 
     @Override
     protected Species getEntity() {
-        Species species = Species.builder()
-                .id(TestObjectFactory.ID_FIELD)
-                .name(TestObjectFactory.NAME_FIELD)
-                .build();
+        Species species = TestObjectFactory.Species();
+        species.setId(TestObjectFactory.ID_FIELD);
 
         return species;
     }
 
     @Override
     protected SpeciesDTO getDto() {
-        SpeciesDTO speciesDto = SpeciesDTO.builder()
-                .id(TestObjectFactory.ID_FIELD)
-                .name(TestObjectFactory.NAME_FIELD)
-                .build();
-
-        return speciesDto;
+        return TestObjectFactory.SpeciesDTO();
     }
 
     @Override
-    protected void verifyDomain(Species species, SpeciesDTO speciesDto) {
+    protected void verifyEntity(Species species, SpeciesDTO speciesDto) {
         assertEquals(species.getId(), speciesDto.getId());
         assertEquals(species.getName(), speciesDto.getName());
     }

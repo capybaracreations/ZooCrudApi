@@ -1,6 +1,6 @@
 package pro.patrykkrawczyk.zoocrudapi.service;
 
-import pro.patrykkrawczyk.zoocrudapi.dto.SpeciesDTO;
+import pro.patrykkrawczyk.zoocrudapi.service.dto.SpeciesDTO;
 
 import java.util.List;
 

@@ -4,9 +4,9 @@ import lombok.extern.java.Log;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pro.patrykkrawczyk.zoocrudapi.domain.Species;
-import pro.patrykkrawczyk.zoocrudapi.dto.SpeciesDTO;
 import pro.patrykkrawczyk.zoocrudapi.repository.SpeciesRepository;
 import pro.patrykkrawczyk.zoocrudapi.service.SpeciesService;
+import pro.patrykkrawczyk.zoocrudapi.service.dto.SpeciesDTO;
 import pro.patrykkrawczyk.zoocrudapi.service.mapper.SpeciesMapper;
 
 import java.util.LinkedList;

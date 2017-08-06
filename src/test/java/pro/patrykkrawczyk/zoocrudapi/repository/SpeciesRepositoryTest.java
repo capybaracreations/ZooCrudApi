@@ -52,9 +52,14 @@ public class SpeciesRepositoryTest {
 
         Species persisted = speciesRepository.findAll().get(0);
 
-        Species modified = TestObjectFactory.SpeciesModified();
-        modified.setId(persisted.getId());
+        Species modified = Species.builder()
+                .id(persisted.getId())
+                .name(TestObjectFactory.NAME_MODIFIED_FIELD)
+                .build();
+
         speciesRepository.saveAndFlush(modified);
+
+        persisted = speciesRepository.findAll().get(0);
 
         Assert.assertEquals(persisted.getId(), modified.getId());
         Assert.assertEquals(modified.getName(), persisted.getName());

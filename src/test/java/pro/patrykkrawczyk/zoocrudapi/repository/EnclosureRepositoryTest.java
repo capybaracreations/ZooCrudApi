@@ -79,10 +79,15 @@ public class EnclosureRepositoryTest {
 
         Enclosure persisted = enclosureRepository.findAll().get(0);
 
-        Enclosure modified = TestObjectFactory.EnclosureModified();
-        modified.setSpecies(SPECIES);
-        modified.setId(persisted.getId());
+        Enclosure modified = Enclosure.builder()
+                .id(persisted.getId())
+                .name(TestObjectFactory.NAME_MODIFIED_FIELD)
+                .species(SPECIES)
+                .build();
+
         enclosureRepository.saveAndFlush(modified);
+
+        persisted = enclosureRepository.findAll().get(0);
 
         Assert.assertEquals(persisted.getId(), modified.getId());
         Assert.assertEquals(modified.getName(), persisted.getName());

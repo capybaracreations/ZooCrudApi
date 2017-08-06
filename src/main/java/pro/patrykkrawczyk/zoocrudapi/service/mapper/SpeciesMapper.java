@@ -2,7 +2,7 @@ package pro.patrykkrawczyk.zoocrudapi.service.mapper;
 
 import org.mapstruct.Mapper;
 import pro.patrykkrawczyk.zoocrudapi.domain.Species;
-import pro.patrykkrawczyk.zoocrudapi.dto.SpeciesDTO;
+import pro.patrykkrawczyk.zoocrudapi.service.dto.SpeciesDTO;
 
 /**
  * Mapper for the entity Species and its DTO SpeciesDTO.

@@ -48,4 +48,13 @@ public class Enclosure implements Serializable {
     @OneToMany(mappedBy = "enclosure")
     @JsonIgnore
     private Set<Animal> animals = new HashSet<>();
+
+    @Override
+    public String toString() {
+        return "Enclosure{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", species=" + species +
+                '}';
+    }
 }

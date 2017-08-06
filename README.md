@@ -35,6 +35,7 @@ I decided to forfeit git flow to speed up development since I'm the only person 
 2. Web layer
     1. Swagger UI documentation at host/swagger-ui.html
     2. DTO requests
+    2. TODO feature to return a list of animals in enclosure when doing /api/enclosures/{id}
 3. Service layer
     1. Serves as a handelr for business logic
     2. Mapping between DTO and Entities via Mapstruct
