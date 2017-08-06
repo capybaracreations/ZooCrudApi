@@ -11,19 +11,16 @@ import pro.patrykkrawczyk.zoocrudapi.service.dto.AnimalDTO;
 @Mapper(componentModel = "spring", uses = {SpeciesMapper.class, EnclosureMapper.class,})
 public interface AnimalMapper extends EntityMapper<Animal, AnimalDTO> {
 
-    ping(source ="species.name", target ="speciesName")
-
-    @Mapping(source = "enclosure.id", target = "enclosureId")
-    AnimalDTO toDto(Animal animal);
-
-    @Map
+    @Override
     @Mapping(source = "speciesId", target = "species")
-
     @Mapping(source = "enclosureId", target = "enclosure")
     Animal toEntity(AnimalDTO animalDTO);
 
+    @Override
     @Mapping(source = "species.id", target = "speciesId")
-
+    @Mapping(source = "species.name", target = "speciesName")
+    @Mapping(source = "enclosure.id", target = "enclosureId")
+    AnimalDTO toDto(Animal animal);
 
     default Animal fromId(Long id) {
         if (id == null) {
