@@ -32,6 +32,7 @@ I decided to forfeit git flow to speed up development since I'm the only person 
     1. Application is built using Java + Spring Boot
     2. Layered Architecture
     3. TODO write JavaDocs
+    4. TODO increase code coverage
 2. Web layer
     1. Swagger UI documentation at host/swagger-ui.html
     2. DTO requests
