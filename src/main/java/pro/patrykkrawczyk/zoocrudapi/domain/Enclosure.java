@@ -18,7 +18,6 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -47,7 +46,7 @@ public class Enclosure implements Serializable {
 
     @OneToMany(mappedBy = "enclosure")
     @JsonIgnore
-    private Set<Animal> animals = new HashSet<>();
+    private Set<Animal> animals;
 
     @Override
     public String toString() {

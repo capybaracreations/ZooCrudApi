@@ -39,6 +39,7 @@ I decided to forfeit git flow to speed up development since I'm the only person 
 3. Service layer
     1. Serves as a handelr for business logic
     2. Mapping between DTO and Entities via Mapstruct
+    3. TODO write validation logic for mismatch between enclosure and animal species
 4. Persistence Layer
     1. PostgreSQL for persistence
     2. HikariCP for JDBC connection pooling
@@ -51,3 +52,4 @@ I decided to forfeit git flow to speed up development since I'm the only person 
     1. Vaadin 8
     2. TODO needs better abstraction layer
     3. TODO needs better ui
+    4. TODO needs ui testing

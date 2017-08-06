@@ -51,11 +51,11 @@ public class SpeciesLayout extends HorizontalLayout implements SpeciesEditorHand
     }
 
     /**
-     * Add Species Button click handler
+     * Add Button click handler
      */
     @Override
     public void buttonClick(Button.ClickEvent event) {
-        speciesEditor.editSpecies(new Species());
+        speciesEditor.edit(new Species());
     }
 
     /**
@@ -63,7 +63,7 @@ public class SpeciesLayout extends HorizontalLayout implements SpeciesEditorHand
      */
     @Override
     public void valueChange(HasValue.ValueChangeEvent<Species> event) {
-        speciesEditor.editSpecies(event.getValue());
+        speciesEditor.edit(event.getValue());
     }
 
     /**
