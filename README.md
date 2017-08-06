@@ -48,3 +48,5 @@ I decided to forfeit git flow to speed up development since I'm the only person 
     2. Transactional tests
 6. Presentation Layer
     1. Vaadin 8
+    2. TODO needs better abstraction layer
+    3. TODO needs better ui

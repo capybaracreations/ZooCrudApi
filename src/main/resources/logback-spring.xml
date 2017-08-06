@@ -24,6 +24,9 @@
 
     <logger name="pro.patrykkrawczyk.zoocrudapi" level="#logback.loglevel#"/>
 
+    <logger name="c.v.spring.internal" level="OFF"/>
+    <logger name="com.vaadin.spring.internal" level="OFF"/>
+    <logger name="c.vaadin.spring.internal" level="OFF"/>
     <logger name="javax.activation" level="WARN"/>
     <logger name="javax.mail" level="WARN"/>
     <logger name="javax.xml.bind" level="WARN"/>
