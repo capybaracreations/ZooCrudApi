@@ -53,3 +53,13 @@ I decided to forfeit git flow to speed up development since I'm the only person 
     2. TODO needs better abstraction layer
     3. TODO needs better ui
     4. TODO needs ui testing
+
+# Installation
+## JAR application
+1. Configure src/main/application.yml
+    1. Provide DB access data in "datasource"
+2. Run following command in root directory
+    1. gradlew clean build -x test
+3. JAR file should now be located in build/libs
+4. Execute JAR
+    1. java -jar zoo-crud-api-0.1.0.jar
