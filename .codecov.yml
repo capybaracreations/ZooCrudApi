@@ -26,5 +26,6 @@ comment:
   require_changes: no
 
 ignore:
-  - "src\main\java\pro\patrykkrawczyk\zoocrudapi\config"  # ignore folders and all its contents
-  - "src\main\java\pro\patrykkrawczyk\zoocrudapi\ui"  # ignore folders and all its contents
+  - "src/main/java/pro/patrykkrawczyk/zoocrudapi/config"  # ignore folders and all its contents
+  - "src/main/java/pro/patrykkrawczyk/zoocrudapi/ui"  # ignore folders and all its contents
+  - "src/main/java/pro/patrykkrawczyk/zoocrudapi/controller/util"  # ignore folders and all its contents

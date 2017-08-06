@@ -89,7 +89,7 @@ class AnimalEditor extends VerticalLayout {
         if (this.animal.getEnclosure() != null) {
             this.animal.getEnclosure().setAnimals(null);
         }
-        
+
         binder.setBean(this.animal);
 
         setVisible(true);
