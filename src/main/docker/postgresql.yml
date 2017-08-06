@@ -1,0 +1,9 @@
+version: '2'
+services:
+    zoocrudapi-postgresql:
+        image: postgres:9.6.2
+        environment:
+            - POSTGRES_USER=ZooCrudApi
+            - POSTGRES_PASSWORD=ZooCrudApi
+        ports:
+            - 5432:5432

@@ -1,0 +1,14 @@
+version: '2'
+services:
+    zoocrudapi-app:
+        image: zoocrudapi
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://zoocrudapi-postgresql:5432/ZooCrudApi
+            - DB_STARTUP_DELAY=10
+        ports:
+            - 8080:8080
+    zoocrudapi-postgresql:
+        extends:
+            file: postgresql.yml
+            service: zoocrudapi-postgresql

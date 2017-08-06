@@ -12,6 +12,8 @@ buildscript {
     }
 }
 
+apply from: 'gradle/docker.gradle'
+
 apply plugin: 'java'
 apply plugin: 'jacoco'
 apply plugin: 'idea'
@@ -54,9 +56,11 @@ ext {
     swaggerVersion = "2.6.1"
     swaggerUiVersion = "2.6.1"
     mapstructVersion = "1.2.0.CR1"
+    jhipster_server_version = "1.1.7"
 }
 
 dependencies {
+    compile "io.github.jhipster:jhipster:${jhipster_server_version}"
     // Core
     compile("org.springframework.boot:spring-boot-starter-web:$springVersion")
     compile("org.springframework.boot:spring-boot-starter-actuator:$springVersion")

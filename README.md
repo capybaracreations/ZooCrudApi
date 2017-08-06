@@ -63,3 +63,10 @@ I decided to forfeit git flow to speed up development since I'm the only person 
 3. JAR file should now be located in build/libs
 4. Execute JAR
     1. java -jar zoo-crud-api-0.1.0.jar
+## Docker
+1. Configure src/main/docker files as needed
+2. By default port 8080 is exposed
+3. Run following set of commands in root folder
+    1. gradlew bootRepackage buildDocker
+    2. docker-compose -f src/main/docker/app.yml up
+
