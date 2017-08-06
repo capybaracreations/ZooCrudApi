@@ -94,7 +94,7 @@ public class SpeciesRepositoryTest {
         Assert.assertEquals(1, before.size());
 
         Species persisted = before.get(0);
-        speciesRepository.delete(persisted);
+        speciesRepository.delete(persisted.getId());
 
         List<Species> after = speciesRepository.findAll();
         Assert.assertEquals(0, after.size());

@@ -3,6 +3,7 @@ package pro.patrykkrawczyk.zoocrudapi;
 import pro.patrykkrawczyk.zoocrudapi.domain.Animal;
 import pro.patrykkrawczyk.zoocrudapi.domain.Enclosure;
 import pro.patrykkrawczyk.zoocrudapi.domain.Species;
+import pro.patrykkrawczyk.zoocrudapi.dto.SpeciesDTO;
 
 import java.util.HashSet;
 
@@ -11,11 +12,21 @@ import java.util.HashSet;
  */
 public class TestObjectFactory {
 
+    public static final Long ID_FIELD = 1L;
+    public static final Long ID_MODIFIED_FIELD = 2L;
+
     public static final String NAME_FIELD = "NAME_FIELD";
     public static final String NAME_MODIFIED_FIELD = "NAME_MODIFIED_FIELD";
 
     public static Species Species() {
         return Species.builder()
+                .id(null)
+                .name(NAME_FIELD)
+                .build();
+    }
+
+    public static SpeciesDTO SpeciesDTO() {
+        return SpeciesDTO.builder()
                 .id(null)
                 .name(NAME_FIELD)
                 .build();
